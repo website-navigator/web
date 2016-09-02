@@ -1,3 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+<div id="root">
+
+<md-toolbar color="primary">
+  <span>{{title}}</span>
+</md-toolbar>
+
+<md-sidenav-layout>
+    <md-sidenav #start mode="side" opened="true">
+      not logged in
+    </md-sidenav>
+
+    <!--My regular content. This will be moved into the proper DOM at runtime.-->
+</md-sidenav-layout>
+
+</div>
