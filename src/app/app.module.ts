@@ -7,10 +7,12 @@ import { MdToolbarModule } from '@angular2-material/toolbar'
 import { MdSidenavModule } from '@angular2-material/sidenav'
 
 import { AppComponent } from './app.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

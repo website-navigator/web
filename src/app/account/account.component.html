@@ -1,0 +1,38 @@
+<div [ngSwitch]="status">
+
+  <!-- have logged in -->
+  <div *ngSwitchCase="statusType.LoggedIn">
+      <div>hello {{account.username}}({{account.id}})</div>
+      <input type="button" value="logout" (click)="logout()"/>
+  </div>
+
+  <div *ngSwitchCase="statusType.NotLoggedIn">
+    <span>hello guest&nbsp;</span><br>
+    <input type="button" value="login" (click)="login()"/>
+    <input type="button" value="sign up" (click)="signUp()"/>
+  </div>
+
+  <!-- haven't logged in' -->
+  <div *ngSwitchCase="statusType.LoggingIn">
+    <span>hello guest&nbsp;</span>
+    <form style="margin: 0; padding: 0;">
+      <input #uid type="text" placeholder="user id"/><br>
+      <input #password type="password" placeholder="password"/><br>
+      <input type="button" value="login" (click)="doLogin(uid.value, password.value)"/>
+      <input type="button" value="back" (click)="reset()"/>
+    </form>
+  </div>
+
+
+  <div *ngSwitchCase="statusType.SigningUp">
+    <span>hello guest&nbsp;</span>
+    <form style="margin: 0; padding: 0;">
+      <input #username type="text" placeholder="user name"/><br>
+      <input #password type="password" placeholder="password"/><br>
+      <input #passwordConfirm type="password" placeholder="password"/><br>
+      <input type="button" value="sign up" (click)="doSignUp(username.value, password.value, passwordConfirm.value)"/>
+      <input type="button" value="back" (click)="reset()"/>
+    </form>
+  </div>
+
+</div>
