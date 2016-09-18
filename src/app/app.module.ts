@@ -18,8 +18,8 @@ import { AccountComponent } from './account/account.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MdToolbarModule,
-    MdSidenavModule
+    MdToolbarModule.forRoot(),
+    MdSidenavModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
